@@ -1,38 +1,31 @@
+//ERICK LOJANO
+//CISC 3142
+//HW2
+
 #include <iostream>
-#include <cstdlib>
 
-#include "compare.h"
+#include "animal.h"
 
-int main(int argc, char** argv){
-    //INPUT VALUES
-    int a = atoi(argv[1]);
-    int b = atoi(argv[2]);
 
-    bool same = false;
-    bool swap = false;
+int main(){
 
-    int bigNum = whichIsBigger(a, b, same);
-    makeFirstBigger(a, b, swap);
+    Animal a1; //default constructor is called
 
-    if(same){
-        std::cout << "x and y are the same" << std::endl;
-    }
-    else{
-        std::cout << bigNum << " is larger" << std::endl;
-    }
+    //FUNCTIONAL FORM
+    Animal a2("Great White Shark", "Carnivore", 5, 0); 
 
-    if(swap){
-        std::cout << "X's new value is " << a << " and y's new value is " << b << std::endl;
-    }
-    else{
-        std::cout << "X and Y were not swapped because they were already in the right order" <<std::endl;
-    }
+    // ASSIGNMENT INIT
+    Animal a3 = { "Chimpanzee", "Omnivore", 7, 4};
 
-    if(!same){
-        int oldNum = makeBothSame(a, b);
-        std::cout << "Now x and y both equal " << a << ". Previously, y's value was " << oldNum << "." << std::endl;
-    }
+    //UNIFORM INIT
+    Animal a4 {"Elephant", "Herbivore", 7, 4};
 
-    return 0;
-    
+    //+ operator
+    Animal a5 = a1 + a2;
+
+    //operator<<<
+    std::cout << a5 << std::endl;
+
+
+
 }
